@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>配色样张 · 4 套</title>
+<style>
+  .th-A{
+    --paper:#F7EEDC; --paper2:#FFFCF4; --paper3:#F2E6CE;
+    --ink:#211C15; --ink2:#5B5240; --ink3:#8E846A;
+    --red:#C8503A; --mustard:#E5A93C; --olive:#6D8B4B; --sky:#6FA8CF; --terra:#C1764A;
+  }
+  .th-B{
+    --paper:#EDF6F6; --paper2:#FFFFFF; --paper3:#E2EFF0;
+    --ink:#1D2A33; --ink2:#4A5A64; --ink3:#7C8C95;
+    --red:#D2604A; --mustard:#EFC04A; --olive:#74A05A; --sky:#4E9BC4; --terra:#C98A5B;
+  }
+  .th-C{
+    --paper:#EDF2E7; --paper2:#FBFDF8; --paper3:#DFE9D6;
+    --ink:#1B231B; --ink2:#4B574A; --ink3:#828F80;
+    --red:#B4472F; --mustard:#D8A62C; --olive:#4E7C3F; --sky:#4C8A8A; --terra:#9E6B44;
+  }
+  .th-D{
+    --paper:#E8EFF6; --paper2:#FFFFFF; --paper3:#D8E4EF;
+    --ink:#161F2B; --ink2:#41505F; --ink3:#7B8B9A;
+    --red:#C24A3C; --mustard:#E3A933; --olive:#5C8B57; --sky:#3F7FB0; --terra:#B0703F;
+  }
+
+  body{margin:0;background:#2E2E2E;padding:18px;
+    font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+  h1{color:#fff;font-size:17px;margin:0 0 4px}
+  .lead{color:#B9B9B9;font-size:12.5px;margin:0 0 16px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1320px}
+
+  .cell{border-radius:12px;overflow:hidden;border:2px solid #111}
+  .head{padding:9px 14px;font-weight:800;font-size:13px;background:#111;color:#fff;
+    display:flex;align-items:center;gap:9px}
+  .head .sw{display:flex;gap:3px;margin-left:auto}
+  .head .sw i{width:13px;height:13px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35)}
+  .pane{padding:15px;background:var(--paper);color:var(--ink);
+    background-image:radial-gradient(var(--paper3) 1px,transparent 1px);background-size:14px 14px}
+
+  /* 卡片 */
+  .card{background:var(--paper2);border:2.5px solid var(--ink);border-radius:10px;
+    box-shadow:4px 4px 0 var(--ink);padding:12px 13px;margin-bottom:13px}
+  .card h3{margin:0 0 4px;font-size:14.5px;font-weight:800;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .card p{margin:0;font-size:12.5px;color:var(--ink2)}
+  .tag{display:inline-block;font-size:10.5px;font-weight:800;line-height:1;padding:4px 8px;
+    border:2px solid var(--ink);border-radius:999px;background:var(--mustard);
+    box-shadow:1.5px 1.5px 0 var(--ink)}
+  .tag.red{background:var(--red);color:#FFF9EC}
+  .tag.green{background:var(--olive);color:#FFF9EC}
+  .tag.sky{background:var(--sky);color:#0E222C}
+
+  /* 时间轴 */
+  .tl{position:relative;padding-left:30px;margin-bottom:13px}
+  .tl:before{content:"";position:absolute;left:11px;top:8px;bottom:8px;
+    border-left:3px dotted var(--ink);opacity:.45}
+  .day{position:relative;background:var(--paper2);border:2.5px solid var(--ink);
+    border-radius:10px;box-shadow:4px 4px 0 var(--ink);padding:10px 12px}
+  .day .dot{position:absolute;left:-30px;top:9px;width:26px;height:26px;border-radius:50%;
+    background:var(--mustard);border:2.5px solid var(--ink);display:flex;
+    align-items:center;justify-content:center;font-size:10px;font-weight:800}
+  .day .ttl{font-size:13.5px;font-weight:800;margin-bottom:6px}
+  .it{display:flex;gap:8px;padding:5px 0;border-top:2px dotted rgba(0,0,0,.16);font-size:12.5px}
+  .it .t{flex:0 0 42px;font-weight:800;color:var(--red)}
+  .it .x{flex:1;color:var(--ink2)}
+  .it .x b{color:var(--ink)}
+
+  /* 提示条 */
+  .hint{display:flex;gap:9px;background:var(--paper2);border:2.5px dashed var(--ink);
+    border-radius:10px;padding:10px 11px;font-size:12.5px;color:var(--ink2);margin-bottom:13px}
+  .hint b{color:var(--ink)}
+  .hint.red{border-style:solid;border-color:var(--red)}
+  .hint .ico{font-weight:800;width:16px;text-align:center;color:var(--ink)}
+
+  /* 按钮 */
+  .btn{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800;
+    color:var(--ink);background:var(--mustard);border:2.5px solid var(--ink);
+    border-radius:8px;padding:6px 11px;box-shadow:2px 2px 0 var(--ink);margin-top:8px}
+  .btn.gho{background:var(--paper3)}
+  .note{font-size:11.5px;color:var(--ink3);margin-top:9px;line-height:1.6}
+  .ratio{font-size:11.5px;color:#9C9C9C;margin-top:12px}
+</style>
+</head>
+<body>
+<h1>配色样张 · 4 套</h1>
+<p class="lead">同一段内容、同一套组件，只有 CSS 变量不同。选一套告诉我，或说「和某张图的气质配」我来挑。</p>
+
+<div class="grid">
+
+  <!-- A -->
+  <div class="cell th-A">
+    <div class="head">A · 奶油暖调（默认）
+      <span class="sw"><i style="background:#F7EEDC"></i><i style="background:#C8503A"></i><i style="background:#E5A93C"></i><i style="background:#6D8B4B"></i><i style="background:#6FA8CF"></i></span>
+    </div>
+    <div class="pane">
+      <div class="card">
+        <h3>大召寺 <span class="tag red">必去</span> <span class="tag green">已预约</span></h3>
+        <p>门票 35 元 · 8:00–18:00 · 玉泉区大召前街</p>
+        <span class="btn">导航前往</span><span class="btn gho">打电话</span>
+      </div>
+      <div class="tl">
+        <div class="day">
+          <div class="dot">14:00</div>
+          <div class="ttl">玉泉区老城 · 召庙步行线</div>
+          <div class="it"><span class="t">14:00</span><span class="x"><b>大召寺</b>，看三绝：银佛、蟠龙、壁画。</span></div>
+          <div class="it"><span class="t">15:45</span><span class="x"><b>五塔寺</b>免费，<b>17:00 就关门</b>。</span></div>
+        </div>
+      </div>
+      <div class="hint red"><span class="ico">!</span><div><b>身份证原件必带。</b>博物馆、火车、景区都要刷证 + 人脸。</div></div>
+      <div class="hint"><span class="ico">!</span><div>沙漠鞋套必租，不然鞋里全是沙。</div></div>
+      <p class="note">适合：历史古都、丝路、西北中原、想要「纸质手账感」的线路。</p>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="cell th-B">
+    <div class="head">B · 清透冷调
+      <span class="sw"><i style="background:#EDF6F6"></i><i style="background:#D2604A"></i><i style="background:#EFC04A"></i><i style="background:#74A05A"></i><i style="background:#4E9BC4"></i></span>
+    </div>
+    <div class="pane">
+      <div class="card">
+        <h3>大召寺 <span class="tag red">必去</span> <span class="tag green">已预约</span></h3>
+        <p>门票 35 元 · 8:00–18:00 · 玉泉区大召前街</p>
+        <span class="btn">导航前往</span><span class="btn gho">打电话</span>
+      </div>
+      <div class="tl">
+        <div class="day">
+          <div class="dot">14:00</div>
+          <div class="ttl">玉泉区老城 · 召庙步行线</div>
+          <div class="it"><span class="t">14:00</span><span class="x"><b>大召寺</b>，看三绝：银佛、蟠龙、壁画。</span></div>
+          <div class="it"><span class="t">15:45</span><span class="x"><b>五塔寺</b>免费，<b>17:00 就关门</b>。</span></div>
+        </div>
+      </div>
+      <div class="hint red"><span class="ico">!</span><div><b>身份证原件必带。</b>博物馆、火车、景区都要刷证 + 人脸。</div></div>
+      <div class="hint"><span class="ico">!</span><div>沙漠鞋套必租，不然鞋里全是沙。</div></div>
+      <p class="note">适合：海岛、江南水乡、湖泊、夏季线路，想要干净清爽的观感。</p>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="cell th-C">
+    <div class="head">C · 墨绿山野
+      <span class="sw"><i style="background:#EDF2E7"></i><i style="background:#B4472F"></i><i style="background:#D8A62C"></i><i style="background:#4E7C3F"></i><i style="background:#4C8A8A"></i></span>
+    </div>
+    <div class="pane">
+      <div class="card">
+        <h3>大召寺 <span class="tag red">必去</span> <span class="tag green">已预约</span></h3>
+        <p>门票 35 元 · 8:00–18:00 · 玉泉区大召前街</p>
+        <span class="btn">导航前往</span><span class="btn gho">打电话</span>
+      </div>
+      <div class="tl">
+        <div class="day">
+          <div class="dot">14:00</div>
+          <div class="ttl">玉泉区老城 · 召庙步行线</div>
+          <div class="it"><span class="t">14:00</span><span class="x"><b>大召寺</b>，看三绝：银佛、蟠龙、壁画。</span></div>
+          <div class="it"><span class="t">15:45</span><span class="x"><b>五塔寺</b>免费，<b>17:00 就关门</b>。</span></div>
+        </div>
+      </div>
+      <div class="hint red"><span class="ico">!</span><div><b>身份证原件必带。</b>博物馆、火车、景区都要刷证 + 人脸。</div></div>
+      <div class="hint"><span class="ico">!</span><div>沙漠鞋套必租，不然鞋里全是沙。</div></div>
+      <p class="note">适合：森林、竹海、山野徒步、峰林、日式与东南亚气质线路。</p>
+    </div>
+  </div>
+
+  <!-- D -->
+  <div class="cell th-D">
+    <div class="head">D · 靛青海港
+      <span class="sw"><i style="background:#E8EFF6"></i><i style="background:#C24A3C"></i><i style="background:#E3A933"></i><i style="background:#5C8B57"></i><i style="background:#3F7FB0"></i></span>
+    </div>
+    <div class="pane">
+      <div class="card">
+        <h3>大召寺 <span class="tag red">必去</span> <span class="tag green">已预约</span></h3>
+        <p>门票 35 元 · 8:00–18:00 · 玉泉区大召前街</p>
+        <span class="btn">导航前往</span><span class="btn gho">打电话</span>
+      </div>
+      <div class="tl">
+        <div class="day">
+          <div class="dot">14:00</div>
+          <div class="ttl">玉泉区老城 · 召庙步行线</div>
+          <div class="it"><span class="t">14:00</span><span class="x"><b>大召寺</b>，看三绝：银佛、蟠龙、壁画。</span></div>
+          <div class="it"><span class="t">15:45</span><span class="x"><b>五塔寺</b>免费，<b>17:00 就关门</b>。</span></div>
+        </div>
+      </div>
+      <div class="hint red"><span class="ico">!</span><div><b>身份证原件必带。</b>博物馆、火车、景区都要刷证 + 人脸。</div></div>
+      <div class="hint"><span class="ico">!</span><div>沙漠鞋套必租，不然鞋里全是沙。</div></div>
+      <p class="note">适合：都市、海港、雪山高原、夜景多的线路，想要沉稳一点的观感。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="ratio">同色系「已出票 = 绿 / 要抢 = 蓝 / 重点 = 红 / 标签 = 黄」的语义约定四套一致，换配色不改变信息层级。</p>
+</body>
+</html>
