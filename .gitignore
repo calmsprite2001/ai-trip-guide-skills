@@ -55,3 +55,6 @@ publish/
 *.bak
 *.log
 .cache/
+
+# 一次性图片处理脚本（不随仓库分发）
+_prep_docs.py
