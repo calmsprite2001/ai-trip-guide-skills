@@ -8,7 +8,7 @@
 
 ```bash
 # 先克隆
-git clone https://github.com/<your-name>/ai-trip-guide-skills.git
+git clone https://github.com/calmsprite2001/ai-trip-guide-skills.git
 cd ai-trip-guide-skills
 
 # 安装

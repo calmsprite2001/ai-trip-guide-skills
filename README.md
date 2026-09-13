@@ -1,5 +1,9 @@
 # AI 旅行攻略 Skill 套件
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-2-blue.svg)](#仓库结构)
+[![Host](https://img.shields.io/badge/host-WorkBuddy%20%7C%20Codex-1f6feb.svg)](#前置条件)
+
 > 一句话把旅行需求丢给 AI，自动产出一份**手机端可打开、数据可溯源**的完整攻略页，再一键做成小红书图文卡片。
 
 这套东西由两个 Skill 组成，可以单独用，也可以串起来跑：
@@ -31,6 +35,46 @@
 ---
 
 ## 效果预览
+
+下面这些全部是真实产出，不是示意图。需求是「成都出发去山西，11月1日-11月5日」。
+
+### ① 生成的攻略页（手机端）
+
+手机打开就是一个完整攻略，Tab 切城市，票务和行程都在里面：
+
+| 行程总览 | 票夹（含抢票时间） |
+|---|---|
+| [![行程总览](docs/guide-overview.jpg)](docs/guide-overview.jpg) | [![票夹](docs/guide-wallet.jpg)](docs/guide-wallet.jpg) |
+
+注意右图：已出票的航班和**待抢的火车票**分开放，火车票那栏写着「开售 10/20，预售期 15 天，起售时刻以 12306 当日查询为准」——这些不是编的，是当时查的。
+
+### ② 每城一张水彩长卷封面
+
+用总览长卷当母版做图生图，保证四张风格完全统一：
+
+[![总览长卷](docs/cover-loop.jpg)](docs/cover-loop.jpg)
+
+| 大同 | 太原 |
+|---|---|
+| [![大同](docs/cover-datong.jpg)](docs/cover-datong.jpg) | [![太原](docs/cover-taiyuan.jpg)](docs/cover-taiyuan.jpg) |
+
+| 平遥 |
+|---|
+| [![平遥](docs/cover-pingyao.jpg)](docs/cover-pingyao.jpg) |
+
+上排是「总览」，把云冈大佛、悬空寺、应县木塔、楼阁、平遥城墙横向铺开一张。下排三张是各城独立封面，配色和笔触跟总览一致。**没有图片生成能力也能跑**——降级为 CSS 纯色封面，攻略照样能用。
+
+### ③ 一键转成小红书图文
+
+攻略做完，`social-card-render` 直接把它排成 9 张卡片：
+
+| 封面 | 方法说明 | 避坑与引导 |
+|---|---|---|
+| [![封面](docs/xhs-01-cover.jpg)](docs/xhs-01-cover.jpg) | [![方法](docs/xhs-02-method.jpg)](docs/xhs-02-method.jpg) | [![避坑](docs/xhs-09-tips.jpg)](docs/xhs-09-tips.jpg) |
+
+卡片用 HTML 排版再用无头浏览器截图（保真度远高于 PIL 手排），输出 1080×1440，直接发。
+
+### 流程速览
 
 ```
 需求：成都出发去山西，11月1日-11月5日
@@ -80,7 +124,7 @@
 **一键装（推荐）：**
 
 ```bash
-git clone https://github.com/<your-name>/ai-trip-guide-skills.git
+git clone https://github.com/calmsprite2001/ai-trip-guide-skills.git
 cd ai-trip-guide-skills
 python install.py            # 自动探测 skills 目录 + 拷贝 + 环境自检
 ```
@@ -92,7 +136,7 @@ python install.py            # 自动探测 skills 目录 + 拷贝 + 环境自�
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/<your-name>/ai-trip-guide-skills.git
+git clone https://github.com/calmsprite2001/ai-trip-guide-skills.git
 
 # 2. 把两个 skill 目录拷进客户端的 skills 目录
 #    Windows:
@@ -193,6 +237,8 @@ ai-trip-guide-skills/
 ├── install.py                     # 一键安装脚本（自探测目录 + 备份 + 自检）
 ├── LICENSE                        # MIT
 ├── .gitignore
+│
+├── docs/                          # README 用的示例图（真实产出，非示意图）
 │
 ├── trip-guide-builder/            # 攻略构建全流程
 │   ├── SKILL.md                   #   主流程：三入口问题 + 七阶段 + 7 条铁律
